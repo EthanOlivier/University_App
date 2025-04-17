@@ -1,3 +1,7 @@
+<% if @student.errors.any? %>
+    <%= render "Shared/errors" %>
+<% end %>
+
 <div class="container">
     <div class="row center">
         <div class="card-panel sign-up-form">
@@ -11,10 +15,10 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <%= f.email_field :name, placeholder: "Email", type: "email", class: "validate", autocomplete: :off %>
+                            <%= f.email_field :email, placeholder: "Email", type: "email", class: "validate", autocomplete: :off %>
                         </div>
                     </div>
-                    <%= f.submit "Submit", class: "waves-effect waves-light btn-large" %>
+                    <%= f.submit "Submit", class: "waves-light btn-large" %>
                 <% end %>
             </div>
         </div>
