@@ -1,0 +1,26 @@
+<% if @student.errors.any? %>
+    <%= render "Shared/errors" %>
+<% end %>
+
+<div class="container">
+    <div class="row center">
+        <div class="card-panel sign-up-form">
+            <div class="row">
+                <h3 class="center-align">Sign Up</h3>
+                <%= form_for(@student, html: {class: "col s12 m12 l12"}) do |f| %>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <%= f.text_field :name, placeholder: "Name", class: "validate", autocomplete: :off %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <%= f.email_field :email, placeholder: "Email", type: "email", class: "validate", autocomplete: :off %>
+                        </div>
+                    </div>
+                    <%= f.submit "Submit Changes", class: "waves-light btn-large" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
