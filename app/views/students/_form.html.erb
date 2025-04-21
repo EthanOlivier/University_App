@@ -18,6 +18,16 @@
                             <%= f.email_field :email, placeholder: "Email", type: "email", class: "validate", autocomplete: :off %>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <%= f.password_field :password, placeholder: "Password", class: "validate", autocomplete: :off %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "validate", autocomplete: :off %>
+                        </div>
+                    </div>
                     <%= f.submit(@student.new_record? ? "Submit" : "Submit Changes", class: "waves-light btn-large") %>
                 <% end %>
             </div>
