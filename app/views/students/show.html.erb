@@ -1,14 +1,24 @@
-<div class="container sign-up-form">
-    <div class="card blue-grey darken-1 center-align">
-        <div class="card-content white-text">
-            <span class="card-title"><%= @student.name %></span>
-            <p><%= @student.email %></p>
-            <p>Course Enrollments: None</p>
-        </div>
-        <% if current_user == @student %>
-            <div class="card-action">
-                <%= link_to "Edit Profile", edit_student_path %>
+<div class="row">
+    <div class="container sign-up-form">
+        <div class="card blue-grey darken-1 center-align">
+            <div class="card-content white-text">
+                <span class="card-title"><%= @student.name %></span>
+                <p><%= @student.email %></p>
+                <p><br>Course Enrollments: 
+                    <% if @student.courses.none? %>
+                        None
+                    <% else %>
+                        <% @student.courses.each do |course| %>
+                            <ul><%= course.name %></ul>
+                        <% end %>
+                    <% end %>
+                </p>
             </div>
-        <% end %>
+            <% if current_user == @student %>
+                <div class="card-action">
+                    <%= link_to "Edit Profile", edit_student_path %>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
