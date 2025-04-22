@@ -13,7 +13,7 @@
                             None
                         <% else %>
                             <% student.courses.each do |course| %>
-                                <br><%= link_to course.name, root_path %>
+                                <br><%= link_to course.name, course %>
                             <% end %>
                         <% end %>
                     </p>

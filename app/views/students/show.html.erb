@@ -9,7 +9,7 @@
                         None
                     <% else %>
                         <% @student.courses.each do |course| %>
-                            <ul><%= course.name %></ul>
+                            <br><%= link_to course.name, course %>
                         <% end %>
                     <% end %>
                 </p>
