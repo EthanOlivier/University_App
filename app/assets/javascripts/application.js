@@ -17,6 +17,16 @@
 //= require turbolinks
 //= require_tree .
 
+// ChatGPT code to fix an error built into turbolinks
+$(document).on("turbolinks:before-cache", function() {
+    $('.sidenav').each(function() {
+      var instance = M.Sidenav.getInstance(this);
+      if (instance) {
+        instance.destroy();
+      }
+    });
+  });
+
 $(document).on("turbolinks:load", function() {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
