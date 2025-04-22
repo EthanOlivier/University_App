@@ -8,6 +8,8 @@
                 <% if logged_in? %>
                     <li><%= link_to "Students", students_path %></li>
                     <li><%= link_to "#{current_user.name}'s Profile", current_user %></li>
+                <% else %>
+                    <li><%= link_to "Sign up", new_student_path %></li>
                 <% end %>
                 <li><%= session_link %></li>
             </ul>
