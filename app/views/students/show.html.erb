@@ -5,8 +5,10 @@
             <p><%= @student.email %></p>
             <p>Course Enrollments: None</p>
         </div>
-        <div class="card-action">
-            <%= link_to "Edit Profile", edit_student_path %>
-        </div>
+        <% if current_user == @student %>
+            <div class="card-action">
+                <%= link_to "Edit Profile", edit_student_path %>
+            </div>
+        <% end %>
     </div>
 </div>

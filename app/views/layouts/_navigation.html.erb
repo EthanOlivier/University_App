@@ -5,7 +5,9 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><%= link_to "Courses", root_path %></li>
-                <li><%= link_to "About", about_path %></li>
+                <% if logged_in? %>
+                    <li><%= link_to "Students", students_path %></li>
+                <% end %>
                 <li><%= session_link %></li>
             </ul>
         </div>
@@ -14,6 +16,8 @@
 
 <ul class="sidenav" id="mobile-demo">
     <li><%= link_to "Courses", root_path %></li>
-    <li><%= link_to "About", about_path %></li>
+    <% if logged_in? %>
+        <li><%= link_to "Students", students_path %></li>
+    <% end %>
     <li><%= session_link %></li>
 </ul>
